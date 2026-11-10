@@ -202,7 +202,11 @@ const messageFields: INodeProperties[] = [
 				type: 'dateTime',
 				default: '',
 				routing: {
-					send: { type: 'query', property: 'since', value: '={{ new Date($value).toISOString() }}' },
+					send: {
+						type: 'query',
+						property: 'since',
+						value: '={{ new Date($value).toISOString() }}',
+					},
 				},
 			},
 			{
@@ -219,7 +223,7 @@ const messageFields: INodeProperties[] = [
 					{ name: 'Sent', value: 'sent' },
 				],
 				routing: { send: { type: 'query', property: 'status' } },
-			},,
+			},
 		],
 	},
 ];
@@ -262,7 +266,11 @@ const receivedFields: INodeProperties[] = [
 				type: 'dateTime',
 				default: '',
 				routing: {
-					send: { type: 'query', property: 'since', value: '={{ new Date($value).toISOString() }}' },
+					send: {
+						type: 'query',
+						property: 'since',
+						value: '={{ new Date($value).toISOString() }}',
+					},
 				},
 			},
 		],
@@ -288,7 +296,8 @@ export class SmsGora implements INodeType {
 		group: ['output'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Send and receive SMS through your own Android phones with the SMS Gora SMS gateway',
+		description:
+			'Send and receive SMS through your own Android phones with the SMS Gora SMS gateway',
 		defaults: { name: 'SMS Gora' },
 		usableAsTool: true,
 		inputs: [NodeConnectionTypes.Main],

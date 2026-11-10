@@ -23,7 +23,8 @@ export class SmsGoraApi implements ICredentialType {
 			typeOptions: { password: true },
 			default: '',
 			required: true,
-			description: 'Create a key in the SMS Gora dashboard under SMS Gora → API keys (starts with sgk_)',
+			description:
+				'Create a key in the SMS Gora dashboard under SMS Gora → API keys (starts with sgk_)',
 		},
 		{
 			displayName: 'Base URL',
