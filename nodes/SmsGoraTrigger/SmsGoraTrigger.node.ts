@@ -112,7 +112,8 @@ export class SmsGoraTrigger implements INodeType {
 				if (staticData.webhookId !== undefined) {
 					try {
 						await smsGoraRequest.call(this, 'DELETE', `/webhooks/${staticData.webhookId}`);
-					} catch {
+					} catch (error) {
+						this.logger.warn(`SMS Gora: could not delete webhook ${staticData.webhookId}: ${(error as Error).message}`);
 						return false;
 					}
 					delete staticData.webhookId;
