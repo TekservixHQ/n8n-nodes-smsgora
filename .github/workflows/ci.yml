@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: package-lock
+          path: package-lock.json
+      - name: Prettier (writes format.patch if anything changes)
+        run: |
+          npx prettier --write nodes credentials
+          git diff > format.patch || true
+          cat format.patch
+      - uses: actions/upload-artifact@v4
+        with:
+          name: format-patch
+          path: format.patch
+      - run: npm run lint
+      - run: npm run build
+      - run: npm pack --dry-run

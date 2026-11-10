@@ -1,0 +1,62 @@
+{
+	"name": "n8n-nodes-smsgora",
+	"version": "1.0.0",
+	"description": "n8n nodes for SMS Gora: send and receive SMS through your own Android phones, and start workflows on incoming SMS and delivery reports.",
+	"license": "MIT",
+	"homepage": "https://tekservix.com/smsgora/",
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"sms",
+		"sms-gateway",
+		"bulk-sms",
+		"android",
+		"otp",
+		"smsgora",
+		"tekservix"
+	],
+	"author": {
+		"name": "Tekservix",
+		"email": "support@tekservix.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TekservixHQ/n8n-nodes-smsgora.git"
+	},
+	"scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [
+			"dist/credentials/SmsGoraApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/SmsGora/SmsGora.node.js",
+			"dist/nodes/SmsGoraTrigger/SmsGoraTrigger.node.js"
+		]
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "^0.56.1",
+		"eslint": "9.39.4",
+		"prettier": "3.8.3",
+		"release-it": "20.2.0",
+		"typescript": "5.9.3"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	},
+	"bugs": {
+		"url": "https://github.com/TekservixHQ/n8n-nodes-smsgora/issues"
+	}
+}
