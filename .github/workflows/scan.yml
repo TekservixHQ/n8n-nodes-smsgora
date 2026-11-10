@@ -8,5 +8,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
-      - run: npx -y @n8n/scan-community-package@latest n8n-nodes-smsgora
+          node-version: '22'
+      - run: |
+          set -o pipefail
+          npx -y @n8n/scan-community-package@latest n8n-nodes-smsgora 2>&1 | cat
