@@ -2,6 +2,8 @@
 
 [![npm](https://img.shields.io/npm/v/n8n-nodes-smsgora.svg)](https://www.npmjs.com/package/n8n-nodes-smsgora)
 
+**SMS Gora SMS Gateway** - official n8n community nodes: send and receive SMS through your own Android phones, triggers on incoming SMS and delivery reports.
+
 n8n community nodes for [SMS Gora](https://tekservix.com/smsgora/), the SMS gateway that sends and receives texts through your own Android phones.
 
 Send SMS from any workflow, and start workflows when one of your phones receives an SMS or a message is delivered. There's no sender ID registration and no per-message fee from us: your mobile operator bills the texts like any SMS.
