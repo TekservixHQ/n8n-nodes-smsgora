@@ -1,7 +1,7 @@
 {
 	"name": "n8n-nodes-smsgora",
-	"version": "1.0.1",
-	"description": "n8n nodes for SMS Gora: send and receive SMS through your own Android phones, and start workflows on incoming SMS and delivery reports.",
+	"version": "1.0.2",
+	"description": "SMS Gora SMS Gateway: n8n community nodes by Tekservix. Send and receive SMS through your own Android phones, and start workflows on incoming SMS and delivery reports.",
 	"license": "MIT",
 	"homepage": "https://tekservix.com/smsgora/",
 	"keywords": [
